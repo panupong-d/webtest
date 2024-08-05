@@ -55,6 +55,13 @@
   text-decoration: none; /* Remove underline from links */
 }
 
+.social-icons2 a {
+  color: white; /* White color for icons */
+  font-size: 24px; /* Size of icons */
+  text-decoration: none; /* Remove underline from links */
+}
+
+
 .social-icons a:hover {
   color: #b3d9ff; /* Light blue color on hover */
 }
