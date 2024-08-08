@@ -23,6 +23,12 @@ function MyNavbar() {
     navigate('/important-places');
   };
 
+  const handleContactClick = () => {
+    window.scrollTo(0, 0);
+    navigate('/contact-us');
+  };
+
+
 
   return (
     <Navbar className="navbar-custom" expand="lg" fixed="top">
@@ -37,7 +43,7 @@ function MyNavbar() {
           <Nav.Link onClick={handleImportantPlacesClick}>สถานที่สำคัญ</Nav.Link>
         </Nav>
         <Nav className="ml-auto">
-          <Nav.Link onClick={handleLogoClick}>ช่องทางติดต่อ</Nav.Link>
+          <Nav.Link onClick={handleContactClick}>ช่องทางติดต่อ</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
