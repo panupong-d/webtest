@@ -7,11 +7,13 @@ const PlacesGridSection = () => {
   const [modalData, setModalData] = useState(null); // เก็บข้อมูล API
   const [cards, setCards] = useState([]); // เก็บข้อมูลการ์ด
 
+
+
   // Fetch data when component mounts
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://192.168.1.54:3005/data1033/id_l');
+        const response = await fetch(`http://${process.env.REACT_APP_HOST}/data1033/id_l`);
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
         console.log(data); // ตรวจสอบข้อมูลที่ได้รับ
@@ -26,7 +28,7 @@ const PlacesGridSection = () => {
 
   const handleCardClick = async (id) => {
     try {
-      const response = await fetch(`http://192.168.1.54:3005/data1033/id_l/${id}`);
+      const response = await fetch(`http://${process.env.host}/data1033/id_l/${id}`);
       if (!response.ok) throw new Error('Network response was not ok');
       const [data] = await response.json(); // ดึงข้อมูลจากรายการแรกของอาร์เรย์
       console.log(data); // ตรวจสอบข้อมูลที่ได้รับ
