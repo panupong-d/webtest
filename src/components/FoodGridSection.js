@@ -11,7 +11,7 @@ const FoodGridSection = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://192.168.1.54:3005/data103/id_all');
+        const response = await fetch('https://charoenkrung103-09a5dba3deba.herokuapp.com//data103/id_all');
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
         console.log(data); // ตรวจสอบข้อมูลที่ได้รับ
@@ -20,13 +20,13 @@ const FoodGridSection = () => {
         console.error('Error fetching data:', error);
       }
     };
-
+  
     fetchData();
   }, []);
 
   const handleCardClick = async (id) => {
     try {
-      const response = await fetch(`http://192.168.1.54:3005/data103/id/${id}`);
+      const response = await fetch(`https://charoenkrung103-09a5dba3deba.herokuapp.com/data103/id/${id}`);
       if (!response.ok) throw new Error('Network response was not ok');
       const [data] = await response.json(); // ดึงข้อมูลจากรายการแรกของอาร์เรย์
       console.log(data); // ตรวจสอบข้อมูลที่ได้รับ
